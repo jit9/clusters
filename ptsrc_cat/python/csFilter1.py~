@@ -1,0 +1,41 @@
+from flipper import *
+import scipy.ndimage
+
+def optimalFilter(mp, signalTransform = None):
+    """
+    @param mp liteMap to filter
+    @param noiseSpectrum an array containing the noise power spectrum of mp
+    @param signalTransform an array containing the fourier transform of the signal for matched filtering
+    @param fwhm if signalTransform is not specified, then filter with a gaussian of this width
+    @param extraFilt another filter array to apply (form = liteMap)
+    """
+
+    """ get power spectra of cmb and noise maps """
+    pNoise = liteMap.fftTools.powerFromLiteMap(mp)
+
+    """ calculate filter """
+    filt = 1 / pNoise.powerMap
+
+#if we are not using a nice model, the filter need conditioning...
+#eliminate outliers from filter
+    med = numpy.median(filt)
+    filt[numpy.where(filt> 10*med)] = med
+    # convolve filter with gaussian to smooth it
+    kernel_width = (5,5)  # width of gaussian kernal in sigma
+    filt = scipy.ndimage.gaussian_filter(filt, kernel_width)
+
+    ft = liteMap.fftFromLiteMap(mp)
+    u = ft.kMap * filt
+
+    if signalTransform != None:
+        u *= signalTransform
+        cov = filt*numpy.abs(signalTransform)**2
+        integral = cov.sum()/mp.Nx/mp.Ny
+        u /= integral
+
+    filtered = numpy.real(liteMap.fftTools.ifft2(u))
+
+    filtered = liteMap.liteMapFromDataAndWCS(filtered, mp.wcs)
+
+    return filtered
+

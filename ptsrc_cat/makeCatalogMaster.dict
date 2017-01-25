@@ -1,0 +1,22 @@
+#Data Specifications
+map = 'data_JyPerSr.fits'
+weight = 'weights.fits' #'coadd_weights.fits'
+lowestWeightAllowed = 0.01
+
+#Catalog Specifications
+makeCatalog= 'makeCatalog.dict'
+initSNR = 50.0
+mainSNR = 2.8
+
+#Field Specifications
+fieldnames = ['Deep6']#['00hr']
+
+#Lat/Lon Limits
+#fielddefs  = {'00hr':[44.525, 348.125, -10.2377, 6.0948]}
+#fielddefs  = {'00hr':[53.925, 338.59167, -10.63598, 6.50564]}
+#fielddefs  = {'00hr':[42.0, 349.0, -8.0, 5.0]} #reducedFinal
+fielddefs  = {'Deep6':[30.0, 40.0, -7.0, -1.0]}
+
+fluxCut = [0.0068]
+
+catalogPrefix = "catalog"
