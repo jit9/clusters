@@ -1,5 +1,6 @@
 # ptsrc-cat
 Point source catalog code
+Written by Toby Marriage, Megan Gralla... (used by Rahul, Kevin, Heather)
 
 Initial readme from Heather skyping with Kevin on 4 October 2016. A more complete readme coming soon!
 
