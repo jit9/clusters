@@ -9,23 +9,22 @@ To run this code you will need intensity and weight maps (from Enki or Ninkasi)
 and a beam datafile
 
 
-2. Clone the point source code from github:
+1. Clone the point source code from github:
 git clone https://github.com/ACTCollaboration/ptsrc-cat.git
 
 
-3. Edit your bashrc or bash_profile to point to the point source code so you
+2. Edit your bashrc or bash_profile to point to the point source code so you
 can call it from elsewhere
 (there are neater ways of doing this, should we implement them?)
 In the following, POINT_SOURCE_DIR is the path to the directory containing the
 bin and python folders.
+>export POINT_SOURCE_DIR=path to where point source code is
+>export PATH=$PATH:$POINT_SOURCE_DIR/bin
+>export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/python
+>export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/bin
 
-export POINT_SOURCE_DIR=path to where point source code is
-export PATH=$PATH:$POINT_SOURCE_DIR/bin
-export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/python
-export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/bin
 
-
-4. Create your input maps. To make a catalog the code needs the total
+3. Create your input maps. To make a catalog the code needs the total
 intensity map in Jy/sr and a weight map. Depending on the input maps used
 there are different ways to do this.
 
@@ -50,7 +49,7 @@ Whatever method you use, you need an input intensity map that is in Jy per sr
 and a weight map to use as input to makeCatalogMaster by the end of this step.
 
 
-5. Modify the input dictionaries:
+4. Modify the input dictionaries:
 makeCatalogMaster.dict
   - ensure that map and weight point to the input intensity and weight
     maps that you have created
@@ -75,7 +74,7 @@ makeTemplateFromCatalog.dict
   - set file in templates to point to the beam datafile in beams
 
 
-6. Create the catalog by running:
+5. Create the catalog by running:
 makeCatalogMaster makeCatalogMaster.dict
 
   - if the catalog was created successfully the code will produce a folder
