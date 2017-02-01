@@ -28,24 +28,24 @@ bin and python folders.
 intensity map in Jy/sr and a weight map. Depending on the input maps used
 there are different ways to do this.
 
-If you are using maps that do not have the data split then for Enki, use ndflip
+>If you are using maps that do not have the data split then for Enki, use ndflip
 to separate out the intensity map and weights, convert the intensity to Jy/sr
 and save. An example of this is given in make_input_maps_enki.py. For Ninkasi
 maps you may need to add together the I, beam_test and input_used maps to get
 the total intensity.
 
-You may also need to add together maps from a four way split. I (Heather) have
+>You may also need to add together maps from a four way split. I (Heather) have
 not done this but the approach outlined to me by Kevin was
 
-i. add together the CMB I and beam_test maps using eg add_input_beam_test_and_100.py
+>i. add together the CMB I and beam_test maps using eg add_input_beam_test_and_100.py
 
-ii. Run weightedCoadd which uses weightedCoadd.dict
+>ii. Run weightedCoadd which uses weightedCoadd.dict
 
-iii. Run get_maps - not sure if this does anything important or just renames files
+>iii. Run get_maps - not sure if this does anything important or just renames files
 
-iv. Run convertToJyPerSr to change from micro Kelvin to Janskys per steradian
+>iv. Run convertToJyPerSr to change from micro Kelvin to Janskys per steradian
 
-Whatever method you use, you need an input intensity map that is in Jy per sr
+>Whatever method you use, you need an input intensity map that is in Jy per sr
 and a weight map to use as input to makeCatalogMaster by the end of this step.
 
 
