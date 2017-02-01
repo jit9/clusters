@@ -18,10 +18,11 @@ can call it from elsewhere
 (there are neater ways of doing this, should we implement them?)
 In the following, POINT_SOURCE_DIR is the path to the directory containing the
 bin and python folders.
->export POINT_SOURCE_DIR=path to where point source code is
->export PATH=$PATH:$POINT_SOURCE_DIR/bin
->export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/python
->export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/bin
+
+  export POINT_SOURCE_DIR=path to where point source code is
+  export PATH=$PATH:$POINT_SOURCE_DIR/bin
+  export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/python
+  export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/bin
 
 
 3. Create your input maps. To make a catalog the code needs the total
@@ -37,13 +38,13 @@ the total intensity.
 You may also need to add together maps from a four way split. I (Heather) have
 not done this but the approach outlined to me by Kevin was
 
-i. add together the CMB I and beam_test maps using eg add_input_beam_test_and_100.py
+  i. add together the CMB I and beam_test maps using eg add_input_beam_test_and_100.py
 
-ii. Run weightedCoadd which uses weightedCoadd.dict
+  ii. Run weightedCoadd which uses weightedCoadd.dict
 
-iii. Run get_maps - not sure if this does anything important or just renames files
+  iii. Run get_maps - not sure if this does anything important or just renames files
 
-iv. Run convertToJyPerSr to change from micro Kelvin to Janskys per steradian
+  iv. Run convertToJyPerSr to change from micro Kelvin to Janskys per steradian
 
 Whatever method you use, you need an input intensity map that is in Jy per sr
 and a weight map to use as input to makeCatalogMaster by the end of this step.
