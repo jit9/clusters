@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 import matplotlib
 matplotlib.use('Agg')
 from flipper import *
@@ -80,7 +80,7 @@ def doTemplate(catQueue,sumQueue):
         print "Processing %d/%d at (%.1f, %.1f)" % (i+1,len(cat),row['ra'],row['dec'])
         if 'fluxMultiplier' in params and params['fluxMultiplier'] != None:
             if fluxField != None:
-                scale = row[fluxField]/pixarea*params['fluxMultiplier'] 
+                scale = row[fluxField]/pixarea*params['fluxMultiplier']
             else:
                 scale = params['fluxMultiplier']
         else:
@@ -130,4 +130,3 @@ os.nice(10)
 mp.Process(target=summer, args=(summingQueue,)).start()
 for i in range(nthreads):
     mp.Process(target=doTemplate, args=(catalogQueue,summingQueue)).start()
-

@@ -1,4 +1,4 @@
-inputDir = '../init'
+inputDir = '.'#'../init'
 data = "maps/templateSubtractedDataSmeared.fits"
 weight = "weights.fits"
 band = 148.65
@@ -9,17 +9,17 @@ submaps = [None]
 outputDir = "."
 
 #Source Filtering
-signalTransform= None 
-signalTransform1D = "/Users/heatherp/Documents/ACTPol_Blazars/Point Source Extraction/point_source_code/beams/beam_tform_140206_jitter_deep5_floats.txt"
+signalTransform= None
+signalTransform1D = "/Users/heatherp/Documents/Testing_point_source_code_install/ptsrc-cat/ptsrc_cat/beams/beam_tform_140206_jitter_deep5_floats.txt"
 #signalTransform1D = "/home/mgralla/compactsources/data/beam_ar1_2013_131025.txt"
 signalTransform1DMaxEll = 24997
 #signalTransformModel = "csProfile.beam_file"
 #signalTransformModelMaxEll = 24997
 #signalTransformModelType = "trans"
 #signalTransformParameters = {'filename':"/home/mgralla/compactsources/data/beams_130224/beams_AR1_2009_jitter_130224_fixed.dat",'gaussConv':None,'rescale':149.0/148.65}
-noiseSpectrum = None 
-extraFilter = None 
-extraFilter1D = "/Users/heatherp/Documents/ACTPol_Blazars/Point Source Extraction/point_source_code/beams/highPass.dat"
+noiseSpectrum = None
+extraFilter = None
+extraFilter1D = "/Users/heatherp/Documents/Testing_point_source_code_install/ptsrc-cat/ptsrc_cat/beams/highPass.dat"
 extraFilter1DMaxEll = 39997
 signalFWHM = None
 forceGaussian=False
@@ -49,6 +49,7 @@ finalCalibration = 1.0 # Uranus, updated for WMAP
 
 upgradePixelPitch = 4.
 
+writeSubmaps=False
+
 #Sim Catalog
 simCatalogNames = None
-
