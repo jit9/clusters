@@ -2,11 +2,11 @@
 Point source catalog code
 Written by Toby Marriage, Megan Gralla... (used by Rahul, Kevin, Heather)
 
-1. Ensure that you have flipper installed. If you want to use Enki maps then
-you may want to have ndflip too.
+Before running this code, ensure that you have flipper installed. 
+If you want to use Enki maps then you may want to have ndflip too.
 
-To run this code you will need intensity and weight maps (from Enki or Ninkasi)
-and beam datafile
+To run this code you will need intensity and weight maps (from Enki or Ninkasi) 
+and a beam datafile
 
 
 2. Clone the point source code from github:
@@ -19,7 +19,7 @@ can call it from elsewhere
 In the following, POINT_SOURCE_DIR is the path to the directory containing the
 bin and python folders.
 
-export POINT_SOURCE_DIR=*path to where point source code*
+export POINT_SOURCE_DIR=path to where point source code is
 export PATH=$PATH:$POINT_SOURCE_DIR/bin
 export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/python
 export PYTHONPATH=$PYTHONPATH:$POINT_SOURCE_DIR/bin
